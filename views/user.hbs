@@ -1,0 +1,66 @@
+{{!-- user --}}
+{{#if isUser}}
+    <p>This is your profile page, you can:</p>
+    <ul>
+        <li>Edit your profile information</li>
+        <li>Add, remove favourite users</li>
+        <li>Add, remove blog entries</li>
+    </ul>
+    {{else}}
+    <p>Add this user to your favourite list</p>
+    <a href='/user/{{access.id}}/{{user.user_id}}/favourites/add'><button>Add</button></a>
+{{/if}}
+<h1>{{user.name}}</h1>
+<div>
+    <img src="{{user.image}}" alt="random profile pic">
+</div>
+<h3>About me</h3>
+<p>{{user.description}}</p>
+<p>My favourite site - <a href="{{user.url}}">Click</a></p>
+<a href="{{user.email}}">Mail me</a>
+{{#if isUser}}
+    <a href="/user/{{user.user_id}}/edit/profile">Edit profile</a>
+{{/if}}
+<hr>
+
+{{!-- favourites --}}
+
+<h3>My favourite users</h3>
+<ul>
+    {{#each favs}}
+        <li>
+            <a href="/user/{{id}}">{{name}}</a>
+        </li>
+    {{/each}}
+</ul>
+{{#if isUser}}
+    <a href="/user/{{user.user_id}}/edit/favourites">Change favourites</a>
+{{/if}}
+<hr>
+
+{{!-- blogs --}}
+
+<h3>Blog entries by this user</h3>
+{{#each blogs}}
+<div>
+    <h3>{{title}}</h3>
+    <p>{{content}}</p>
+</div>
+<br>
+{{/each}}
+
+{{#if isUser}}
+    <a href="/user/{{user.user_id}}/edit/blogs">Edit blog entries</a>
+{{/if}}
+
+{{!-- hey how are going ... idea ? where are you ? vision of idea ?
+If no idea ask them questions? 
+Roles - who is who?
+database - how it looks like ?
+
+imdb -> rating -> comments -> 
+user / admin 
+user can rate and comments
+admin can add new content
+
+app matches vines with dishes --}}

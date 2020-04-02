@@ -1,0 +1,21 @@
+<h3>This is a list of this users blogs</h3>
+
+<h3>Add a new blog entry</h3>
+<form method="POST">
+    <label>Title:
+        <input type="text" name="title">
+    </label>
+    <label>Content:
+        <textarea name="content" id="" cols="30" rows="10"></textarea>
+    </label>
+    <input type="submit">
+</form>
+
+{{#each blogs}}
+    <div>
+        <h5>{{title}}</h5>
+        <p>{{content}}</p>
+    </div>
+    <br>
+    <a href="/user/{{user_id}}/{{id}}/blogs/delete"><button>X</button></a>
+{{/each}}

@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>EDA Phase 1 Express Boilerplate</title>
-  </head>
-  <body>
+
+<head>
+  <title>EDA Phase 1 Express Boilerplate</title>
+</head>
+
+<body>
+
+  {{#if access.admin}}
+{{!-- If chosen user === Admin --}}
+
+    <h1>Admin-tools</h1>
     <ul>
-    {{#each users}}
-      <li>{{name}} ({{email}})</li>
-    {{/each}}
+      {{#each users}}
+        <li>{{name}} ({{email}})</li>
+      {{/each}}
     </ul>
-  </body>
+
+    <form method="POST">
+      <label>Name:
+        <input type="text" name="name">
+      </label>
+      <label>Email:
+        <input type="email" name="email">
+      </label>
+      <label>Description:
+        <input type="text" name="description">
+      </label>
+        <input type="submit">
+    </form>
+  {{else}}
+{{!-- If chosen user === User --}}
+
+    <h1>Hello 
+      {{#if access.user}}
+        {{access.user}}
+      {{else}}
+        Anonymous user
+      {{/if}}
+    </h1>
+    <ul>
+      {{#each users}}
+      <li><a href="/user/{{id}}">{{name}}</a>({{email}})</li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</body>
+
 </html>

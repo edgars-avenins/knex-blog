@@ -1,0 +1,20 @@
+<h3>These are your favourite users</h3>
+
+
+{{#each data}}
+    <div>
+        <p>
+            <a href="/user/{{user_id}}/{{id}}/favourites/delete"><button>X</button></a>
+             {{name}}
+        </p>
+    </div>
+{{/each}}
+    <form method="POST" action="/user/{{id}}/edit/favourites">
+        <p>Add new favourite user!</p>
+        <select name="newId">
+            {{#each users}}
+                <option value="{{id}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <input type="submit">
+    </form>

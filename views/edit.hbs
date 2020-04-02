@@ -1,0 +1,32 @@
+{{!-- Profile --}}
+<h3>Edit Profile</h3>
+<form method="POST">
+    <div>
+        <label>Name:
+            <input type="text" name="name" value="{{name}}">
+        </label>
+    </div>
+    <div>
+        <label>Email:
+            <input type="email" name="email" value="{{email}}">
+        </label>
+    </div>
+    <div>
+        <label>Description:
+            <textarea name="description" rows='5' cols="15">
+                {{description}}
+            </textarea>
+        </label>
+    </div>
+    <div>
+        <label>Url:
+            <input type="url" name="url" value="{{url}}">
+        </label>
+    </div>
+    <div>
+        <label>Image:
+            <input type="url" name="image" value="{{image}}">
+        </label>
+    </div>
+    <input type="submit">
+</form>
