@@ -16,8 +16,8 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const access = req.body.level
-  db.getLevel(access)
+  const accessId = req.body.level
+  db.getLevel(accessId)
     .then(() => {
       res.redirect('/list')
     })

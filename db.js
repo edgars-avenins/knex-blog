@@ -48,7 +48,7 @@ function setUsersFalse(db = connection) {
 }
 
 function getLevel(userId, db = connection) {
-  const colName = (userId == 'admin' ? 'admin' : 'level')
+  const colName = (userId == 1 ? 'admin' : 'level')
 
   return db('user-level')
     .select()
