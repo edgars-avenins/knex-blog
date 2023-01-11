@@ -23,7 +23,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^4.0.0",
-    "knex": "^0.20.13",
+    "knex": "^2.4.0",
     "nodemon": "^2.0.2",
     "pg": "^8.0.0",
     "sqlite3": "^4.1.1"
